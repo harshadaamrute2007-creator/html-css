@@ -1,1 +1,119 @@
+:root{
+  --bg: #f4f7fb;
+  --card: #ffffff;
+  --accent: #3f51b5;
+  --accent-700: #334296;
+  --muted: #6b7280;
+  --radius: 10px;
+  --shadow: 0 8px 24px rgba(16,24,40,0.06);
+  --gap: 0.75rem;
+  --max-w: 420px;
+}
 
+*{box-sizing:border-box}
+html,body{height:100%}
+body{
+  margin:0;
+  font-family: Inter, ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+  background:var(--bg);
+  color:#0f172a;
+  -webkit-font-smoothing:antialiased;
+  -moz-osx-font-smoothing:grayscale;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  padding:3rem 1rem;
+}
+
+/* Card/container */
+.container{
+  width:100%;
+  max-width:var(--max-w);
+  background:var(--card);
+  border-radius:var(--radius);
+  box-shadow:var(--shadow);
+  padding:2rem;
+  text-align:left;
+}
+
+/* Heading */
+.container h1{
+  margin:0 0 1rem 0;
+  font-size:1.35rem;
+  text-align:center;
+  color:#0b1220;
+}
+
+/* Form layout */
+.registration-form{
+  display:grid;
+  gap:var(--gap);
+  margin-top:0.25rem;
+}
+
+/* Labels and inputs */
+.registration-form label{
+  font-size:0.85rem;
+  color:var(--muted);
+  display:block;
+  margin-bottom:0.25rem;
+}
+
+.registration-form input[type="text"],
+.registration-form input[type="email"]{
+  width:100%;
+  padding:0.75rem;
+  border:1px solid #e6e9ef;
+  border-radius:8px;
+  background:#fff;
+  font-size:0.95rem;
+  transition:box-shadow .15s ease, border-color .15s ease, transform .06s ease;
+}
+
+.registration-form input::placeholder{color:#c7cbe0}
+
+.registration-form input:focus{
+  outline: none;
+  border-color:var(--accent);
+  box-shadow: 0 6px 18px rgba(63,81,181,0.08);
+  transform:translateY(-1px);
+}
+
+/* Invalid state (basic) */
+.registration-form input:invalid{
+  border-color:#e11d48;
+  box-shadow:0 6px 18px rgba(225,29,72,0.06);
+}
+
+/* Button */
+.btn{
+  display:inline-block;
+  padding:0.8rem 1rem;
+  background:var(--accent);
+  color:#fff;
+  border: none;
+  border-radius:8px;
+  font-weight:600;
+  cursor:pointer;
+  font-size:0.98rem;
+  transition:background .15s ease, transform .08s ease, box-shadow .12s ease;
+  box-shadow: 0 6px 18px rgba(63,81,181,0.12);
+}
+
+.btn:hover{ background:var(--accent-700); transform:translateY(-2px) }
+.btn:active{ transform: translateY(0) scale(.995) }
+.btn:focus{ outline:3px solid rgba(63,81,181,0.12); outline-offset:2px }
+
+/* Small note */
+.note{
+  margin-top:1rem;
+  font-size:0.85rem;
+  color:var(--muted);
+  text-align:center;
+}
+
+/* Responsive tweaks */
+@media (max-width:420px){
+  .container{ padding:1.25rem; border-radius:8px }
+  body{ padding:2rem 0.5rem }
+}
